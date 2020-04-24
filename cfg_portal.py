@@ -7,6 +7,9 @@ Sera executado depois de rodar o perfil QuickInstaller e o GenericSetup.
 Autor:  Fabio Rauber
 E-mail: fabiorauber@gmail.com
 
+Última atualização: Ramiro Batista da Luz.
+E-mail: ramiroluz@gmail.com
+
 @param portal: O Plone site como definido pela opcao site-id.
 @param app: Raiz do Zope
 """
@@ -58,10 +61,6 @@ try:
 
   ploneSettings = registry.forInterface(IPloneCacheSettings)
   ploneSettings.enableCompression = True
-
-  #purgingSettings = registry.forInterface(ICachePurgingSettings)
-  #purgingSettings.enabled = True
-  #purgingSettings.cachingProxies = ('http://<%= @caching_proxy %>:80',)
 
 except Exception as e:
   logger.error('An error ocurred with cache settings configuration: %s.' % str(e))

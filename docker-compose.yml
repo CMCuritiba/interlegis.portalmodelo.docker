@@ -1,8 +1,8 @@
 version: "2"
 services:
   plone:
-    #build: .
-    image: interlegis/portalmodelo:3.0-20
+    build: .
+    image: cmcuritiba/portalmodelo:3.0-21b
     restart: always
     environment:
       ZEO_ADDRESS: zeoserver:8100
@@ -16,8 +16,8 @@ services:
      - data:/data
 
   zeoserver:
-    #build: .
-    image: interlegis/portalmodelo:3.0-20
+    build: .
+    image: cmcuritiba/portalmodelo:3.0-21b
     restart: always
     command: zeoserver
     environment:
@@ -26,8 +26,8 @@ services:
       - data:/data
 
   plonecfg:
-    #build: .
-    image: interlegis/portalmodelo:3.0-20
+    build: .
+    image: cmcuritiba/portalmodelo:3.0-21b
     environment:
       ZEO_ADDRESS: zeoserver:8100
       EMAIL: "contato@tecnico.leg.br"

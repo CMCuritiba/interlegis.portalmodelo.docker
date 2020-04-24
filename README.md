@@ -1,5 +1,5 @@
 # interlegis.portalmodelo.docker
-Containers docker para o Portal Modelo
+Containers docker para o Portal Modelo.
 
 ## Requirements
 
@@ -25,7 +25,7 @@ Salve o seguinte trecho como  docker-compose.yml no diretório de sua preferênc
 version: '2'
 services:
   plone:
-    image: interlegis/portalmodelo:3.0-19
+    image: cmcuritiba/portalmodelo:3.0-21b
     restart: always
     environment:
       ZEO_ADDRESS: zeoserver:8100
@@ -39,7 +39,7 @@ services:
      - data:/data
 
   zeoserver:
-    image: interlegis/portalmodelo:3.0-19
+    image: cmcuritiba/portalmodelo:3.0-21b
     restart: always
     command: zeoserver
     environment:
@@ -48,7 +48,7 @@ services:
       - data:/data
 
   plonecfg:
-    image: interlegis/portalmodelo:3.0-19
+    image: cmcuritiba/portalmodelo:3.0-21b
     environment:
       ZEO_ADDRESS: zeoserver:8100
       EMAIL: "contato@tecnico.leg.br"
@@ -65,6 +65,9 @@ volumes:
     driver: local
 
 ```
+
+Se você busca informações de como usar a imagem docker do interlegis acesse: https://github.com/interlegis/interlegis.portalmodelo.docker
+
 
 ## Executando
 
